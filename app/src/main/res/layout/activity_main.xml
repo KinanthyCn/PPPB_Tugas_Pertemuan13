@@ -34,7 +34,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="474dp"
             android:paddingBottom="30dp">
 
             <ImageView
@@ -42,8 +42,8 @@
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="64dp"
-                android:src="@drawable/_63"
                 android:scaleType="centerCrop"
+                android:src="@drawable/_63"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,13 +53,13 @@
                 android:id="@+id/btn_shuffle"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="376dp"
+                android:layout_marginTop="356dp"
                 android:background="@drawable/button"
                 android:drawableEnd="@drawable/baseline_shuffle_24"
                 android:padding="10dp"
                 android:text="Shuffle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintHorizontal_bias="0.17"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,6 +74,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/favorite_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/baseline_favorite_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
