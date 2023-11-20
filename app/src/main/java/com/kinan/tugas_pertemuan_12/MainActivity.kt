@@ -1,6 +1,7 @@
 package com.kinan.tugas_pertemuan_12
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -31,10 +32,19 @@ class MainActivity : AppCompatActivity() {
             btnShuffle.setOnClickListener(){
                 shuffle(client)
             }
+            favoriteButton.setOnClickListener(){
+                addBookmark()
+            }
         }
 
 
 
+
+
+    }
+    companion object{
+        val EXTRA_DUCK = "img_duck"
+        var data_duck = ""
 
 
     }
@@ -46,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful){
                     val data = response.body()
                     if (data != null){
+                        data_duck = data.imgUrl
                         setImage(this@MainActivity, data.imgUrl)
 
                         Toast.makeText(this@MainActivity, "yeay, kamu berhasil liat bebek", Toast.LENGTH_SHORT).show()
@@ -70,5 +81,10 @@ class MainActivity : AppCompatActivity() {
 
     fun setImage(context : Context, url : String) {
         Glide.with(context).load(url).centerCrop().into(binding.imageDuck)
+    }
+    fun addBookmark(){
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra(EXTRA_DUCK, data_duck)
+        startActivity(intent)
     }
 }
